@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,12 +10,23 @@
 </head>
 <body>
 
-  <!-- Hero con video de fondo -->
+  <!-- Hero con video de fondo y carrusel de respaldo -->
   <header class="hero">
-    <video autoplay muted loop playsinline class="bg-video">
-      <source src="video/video2.mp4" type="video/mp4">
+    <!-- Video de fondo -->
+    <video autoplay muted loop playsinline class="bg-video" id="hero-video">
+      <source src="video/video.mp4" type="video/mp4">
     </video>
+
+    <!-- Carrusel de imágenes de respaldo -->
+    <div class="fallback-carousel" id="fallback-carousel">
+      <img src="img/certificacion.jpeg" alt="Capacitación 1">
+      <img src="img/curso1.jpeg" alt="Capacitación 2">
+      <img src="img/kit.jpeg" alt="Capacitación 3">
+    </div>
+
     <div class="overlay"></div>
+
+    <!-- Contenido del header -->
     <div class="hero-content">
       <img src="img/logo.jpeg" alt="Logo del salón" class="logo">
       <h1>Capacitaciones Profesionales en Manicura</h1>
@@ -70,19 +82,58 @@
   </section>
 
   <!-- Botón flotante de WhatsApp -->
-<a href="https://wa.me/573155704875" target="_blank" class="btn-whatsapp-flotante">
-  💬 WhatsApp
-</a>
+  <a href="https://wa.me/573155704875" target="_blank" class="btn-whatsapp-flotante">
+    💬 WhatsApp
+  </a>
 
   <!-- Contacto -->
-<footer>
-  <h2>Contáctanos</h2>
-  <p>📞 +57 315 5704875<br>
-     📧 info@leidyArt<br>
-     📍 Cali, Colombia</p>
-  
-  <p>&copy; 2025 Salón de Uñas LeidyArt. Todos los derechos reservados.</p>
-</footer>
+  <footer>
+    <h2>Contáctanos</h2>
+    <p>📞 +57 315 5704875<br>
+       📧 info@leidyArt<br>
+       📍 Cali, Colombia</p>
+    
+    <p>&copy; 2025 Salón de Uñas LeidyArt. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Script para fallback carrusel -->
+  <script>
+  const video = document.getElementById('hero-video');
+  const carousel = document.getElementById('fallback-carousel');
+  const images = carousel.querySelectorAll('img');
+  let current = 0;
+
+  // Ocultar todas las imágenes al inicio
+  images.forEach((img, i) => img.style.display = 'none');
+
+  // Función para mostrar la siguiente imagen
+  function showNextImage() {
+    images.forEach(img => img.style.display = 'none');
+    images[current].style.display = 'block';
+    current = (current + 1) % images.length;
+  }
+
+  // Mostrar carrusel si falla el video
+  function activateCarousel() {
+    video.style.display = 'none';
+    carousel.style.display = 'block';
+    showNextImage();
+    setInterval(showNextImage, 3000);
+  }
+
+  // Evento si el video no puede reproducirse
+  video.addEventListener('error', activateCarousel);
+
+  // Evento si el video no se puede reproducir (móvil, autoplay bloqueado, etc)
+  video.addEventListener('stalled', activateCarousel);
+
+  // Evento opcional: si el video no carga en 2 segundos, activamos carrusel
+  setTimeout(() => {
+    if (video.readyState < 3) { // < HAVE_FUTURE_DATA
+      activateCarousel();
+    }
+  }, 2000);
+</script>
 
 
 </body>
