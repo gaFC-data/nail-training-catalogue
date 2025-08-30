@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,14 +9,18 @@
 </head>
 <body>
 
-  <!-- Hero con video de fondo y carrusel de respaldo -->
+  <!-- Banner de sitio en construcción -->
+<div id="construction-banner" class="construction-banner">⚠️ Academia LeidyArt informa que el sitio se encuentra en construcción.</div>
+
+  <!-- Banner promocional -->
+  <div class="promo-banner" id="promo-banner" style="display:none;"></div>
+
+  <!-- Hero con video de fondo y fallback -->
   <header class="hero">
-    <!-- Video de fondo -->
-    <video autoplay muted loop playsinline class="bg-video" id="hero-video">
+    <video autoplay muted loop playsinline poster="img/formacionPro.jpeg" class="bg-video" id="hero-video">
       <source src="video/video.mp4" type="video/mp4">
     </video>
 
-    <!-- Carrusel de imágenes de respaldo -->
     <div class="fallback-carousel" id="fallback-carousel">
       <img src="img/certificacion.jpeg" alt="Capacitación 1">
       <img src="img/curso1.jpeg" alt="Capacitación 2">
@@ -26,7 +29,6 @@
 
     <div class="overlay"></div>
 
-    <!-- Contenido del header -->
     <div class="hero-content">
       <img src="img/logo.jpeg" alt="Logo del salón" class="logo">
       <h1>Capacitaciones Profesionales en Manicura</h1>
@@ -39,21 +41,15 @@
   <section id="cursos">
     <h2>Capacitaciones</h2>
     <div class="grid">
-      <div class="card">
-        <img src="img/curso1.jpeg" alt="Curso Básico">
-        <h3>Manicura Básica</h3>
-        <p>Duración: 2 semanas<br>Certificación incluida</p>
-      </div>
-      <div class="card">
-        <img src="img/curso2.jpeg" alt="Curso Avanzado">
-        <h3>Uñas Acrílicas Avanzado</h3>
-        <p>Duración: 4 semanas<br>Certificación incluida</p>
-      </div>
-      <div class="card">
-        <img src="img/curso1.jpeg" alt="Curso Decoración">
-        <h3>Decoración Profesional</h3>
-        <p>Duración: 3 semanas<br>Certificación incluida</p>
-      </div>
+      <!-- 8 cursos -->
+      <div class="card"><img src="img/curso1.jpeg" alt="Curso Básico"><h3>Manicura Básica</h3><p>Duración: 2 semanas<br>Certificación incluida</p></div>
+      <div class="card"><img src="img/curso2.jpeg" alt="Curso Avanzado"><h3>Uñas Acrílicas Avanzado</h3><p>Duración: 4 semanas<br>Certificación incluida</p></div>
+      <div class="card"><img src="img/curso1.jpeg" alt="Curso Decoración"><h3>Decoración Profesional</h3><p>Duración: 3 semanas<br>Certificación incluida</p></div>
+      <div class="card"><img src="img/curso2.jpeg" alt="Curso Avanzado"><h3>Nail Art Creativo</h3><p>Duración: 2 semanas<br>Certificación incluida</p></div>
+      <div class="card"><img src="img/curso1.jpeg" alt="Curso Básico"><h3>Manicura Exprés</h3><p>Duración: 1 semana<br>Certificación incluida</p></div>
+      <div class="card"><img src="img/curso2.jpeg" alt="Curso Avanzado"><h3>Esmaltado Permanente</h3><p>Duración: 3 semanas<br>Certificación incluida</p></div>
+      <div class="card"><img src="img/curso1.jpeg" alt="Curso Básico"><h3>Diseños en Gel</h3><p>Duración: 2 semanas<br>Certificación incluida</p></div>
+      <div class="card"><img src="img/curso2.jpeg" alt="Curso Avanzado"><h3>Uñas Esculturales</h3><p>Duración: 4 semanas<br>Certificación incluida</p></div>
     </div>
   </section>
 
@@ -61,80 +57,63 @@
   <section id="kits">
     <h2>Kits Profesionales</h2>
     <div class="grid">
-      <div class="card">
-        <img src="img/kit.jpeg" alt="Kit Básico">
-        <h3>Kit Básico</h3>
-        <p>Incluye lo esencial para iniciar en manicura.</p>
-      </div>
-      <div class="card">
-        <img src="img/kit.jpeg" alt="Kit Profesional">
-        <h3>Kit Profesional</h3>
-        <p>Herramientas de alta calidad para resultados duraderos.</p>
-      </div>
+      <!-- 8 kits -->
+      <div class="card"><img src="img/kit.jpeg" alt="Kit Básico"><h3>Kit Básico</h3><p>Incluye lo esencial para iniciar en manicura.</p></div>
+      <div class="card"><img src="img/kit.jpeg" alt="Kit Profesional"><h3>Kit Profesional</h3><p>Herramientas de alta calidad para resultados duraderos.</p></div>
+      <div class="card"><img src="img/kit.jpeg" alt="Kit Avanzado"><h3>Kit Avanzado</h3><p>Incluye herramientas extra para mayor precisión.</p></div>
+      <div class="card"><img src="img/kit.jpeg" alt="Kit Nail Art"><h3>Kit Nail Art</h3><p>Pinceles y pigmentos para decoraciones.</p></div>
+      <div class="card"><img src="img/kit.jpeg" alt="Kit Gel"><h3>Kit Gel</h3><p>Incluye lámpara UV y geles de alta calidad.</p></div>
+      <div class="card"><img src="img/kit.jpeg" alt="Kit Acrílico"><h3>Kit Acrílico</h3><p>Monómero, polvos y pinceles profesionales.</p></div>
+      <div class="card"><img src="img/kit.jpeg" alt="Kit Completo"><h3>Kit Completo</h3><p>Ideal para profesionales con todo en un solo pack.</p></div>
+      <div class="card"><img src="img/kit.jpeg" alt="Kit Premium"><h3>Kit Premium</h3><p>Las mejores herramientas de calidad internacional.</p></div>
     </div>
   </section>
 
-  <!-- Certificación -->
+  <!-- Certificaciones -->
   <section id="certificaciones">
-    <h2>Certificación</h2>
-    <img src="img/certificacion.jpeg" alt="Certificado Ejemplo" class="certificado">
-    <p>Todos nuestros cursos incluyen certificado avalado por la organización.</p>
+    <h2>Certificaciones</h2>
+    <div class="grid">
+      <!-- 8 certificaciones -->
+      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 1"><h3>Certificado en Manicura</h3></div>
+      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 2"><h3>Certificado en Acrílico</h3></div>
+      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 3"><h3>Certificado en Gel</h3></div>
+      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 4"><h3>Certificado en Decoración</h3></div>
+      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 5"><h3>Certificado en Nail Art</h3></div>
+      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 6"><h3>Certificado Avanzado</h3></div>
+      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 7"><h3>Certificado Profesional</h3></div>
+      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 8"><h3>Certificado Master</h3></div>
+    </div>
+    <p>Todos nuestros cursos incluyen certificado avalado por Secretaría de Educación</p>
   </section>
 
-  <!-- Botón flotante de WhatsApp -->
-  <a href="https://wa.me/573155704875" target="_blank" class="btn-whatsapp-flotante">
-    💬 WhatsApp
-  </a>
+  <!-- WhatsApp -->
+  <a href="https://wa.me/573155704875" target="_blank" class="btn-whatsapp-flotante">💬 WhatsApp</a>
 
-  <!-- Contacto -->
+  <!-- Footer -->
   <footer>
-    <h2>Contáctanos</h2>
-    <p>📞 +57 315 5704875<br>
-       📧 info@leidyArt<br>
-       📍 Cali, Colombia</p>
-    
-    <p>&copy; 2025 Salón de Uñas LeidyArt. Todos los derechos reservados.</p>
-  </footer>
+  <h2>Contáctanos</h2>
+  <p>
+    📞 <a href="https://wa.me/573155704875" target="_blank" style="color: inherit; text-decoration: none;">+57 315 5704875</a><br>
+    📧 <a href="mailto:info@leidyArt" style="color: inherit; text-decoration: none;">info@leidyArt</a><br>
+    📍 Cali, Colombia
+  </p>
+  <p>🌐 Síguenos en: 
+  <a href="https://www.instagram.com/leidyart1?igsh=MXE0ejg1b25hNmY1ZA==" target="_blank">
+    <img src="img/instagram.png" alt="Instagram" class="social-icon">
+  </a>
+  <a href="https://www.facebook.com/share/1L3LX56ghB/" target="_blank">
+    <img src="img/facebook.png" alt="Facebook" class="social-icon">
+  </a>
+  <a href="https://www.tiktok.com/@ledirora24?_t=ZS-8zJAY6C0STU&_r=1" target="_blank">
+    <img src="img/tiktok.png" alt="Facebook" class="social-icon">
+  </a>
+</p>
 
-  <!-- Script para fallback carrusel -->
-  <script>
-  const video = document.getElementById('hero-video');
-  const carousel = document.getElementById('fallback-carousel');
-  const images = carousel.querySelectorAll('img');
-  let current = 0;
-
-  // Ocultar todas las imágenes al inicio
-  images.forEach((img, i) => img.style.display = 'none');
-
-  // Función para mostrar la siguiente imagen
-  function showNextImage() {
-    images.forEach(img => img.style.display = 'none');
-    images[current].style.display = 'block';
-    current = (current + 1) % images.length;
-  }
-
-  // Mostrar carrusel si falla el video
-  function activateCarousel() {
-    video.style.display = 'none';
-    carousel.style.display = 'block';
-    showNextImage();
-    setInterval(showNextImage, 3000);
-  }
-
-  // Evento si el video no puede reproducirse
-  video.addEventListener('error', activateCarousel);
-
-  // Evento si el video no se puede reproducir (móvil, autoplay bloqueado, etc)
-  video.addEventListener('stalled', activateCarousel);
-
-  // Evento opcional: si el video no carga en 2 segundos, activamos carrusel
-  setTimeout(() => {
-    if (video.readyState < 3) { // < HAVE_FUTURE_DATA
-      activateCarousel();
-    }
-  }, 2000);
-</script>
+  <p>&copy; 2025 Salón de Uñas LeidyArt. Todos los derechos reservados.</p>
+</footer>
 
 
+  <!-- JS externo -->
+  <script src="scripts.js"></script>
 </body>
 </html>
