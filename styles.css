@@ -1,57 +1,43 @@
 /* =======================
    Estilos Generales
    ======================= */
-/* =======================
-   Fuentes y estilo general
-   ======================= */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  font-family: 'Lato', sans-serif; /* texto principal */
+  font-family: 'Lato', sans-serif;
   background: #fff;
   color: #333;
   overflow-x: hidden;
 }
 
-/* =======================
-   Títulos centrados y elegantes
-   ======================= */
+/* Títulos */
 h1, h2, h3 {
-  font-family: 'Playfair Display', serif; /* títulos */
-  color: #112646; /* tono profesional */
+  font-family: 'Playfair Display', serif;
+  color: #112646;
   font-weight: 700;
-  text-align: center; /* centrado */
-  margin: 20px 0; /* separación vertical */
+  text-align: center;
+  margin: 20px 0;
 }
 
-/* =======================
-   Texto de párrafo
-   ======================= */
+/* Texto */
 p, li, span {
   font-family: 'Lato', sans-serif;
   color: #333;
   line-height: 1.6;
-  text-align: center; /* si quieres que los párrafos también se centren */
+  text-align: center;
 }
 
-/* =======================
-   Ejemplo de subtítulos o secciones
-   ======================= */
 section h2 {
   font-size: 2.4rem;
   margin-bottom: 30px;
-  text-align: center; /* fuerza centrado para secciones */
+  text-align: center;
 }
 
-
-
-.hero-content p {
-  color: #d3d1d1;
-}
+.hero-content p { color: #d3d1d1; }
 
 /* =======================
-   Header Hero con Video y Carrusel Fallback
+   Header Hero
    ======================= */
 .hero {
   position: relative;
@@ -68,7 +54,7 @@ section h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0; /* poner en 0 en lugar de -2 */
+  z-index: 0;
 }
 
 .overlay {
@@ -78,11 +64,10 @@ section h2 {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.2);
-  z-index: 1; /* por encima del video */
+  z-index: 1;
 }
 
-/*pinceladas*/
-
+/* Pinceladas */
 .wave {
   position: absolute;
   width: 200%;
@@ -90,31 +75,14 @@ section h2 {
   left: -50%;
   border-radius: 50% 50% 0 0;
   opacity: 0.9;
-  z-index: 2; /* por encima del video y overlay */
+  z-index: 2;
   animation-name: brush;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
-
-/* Diferentes olas con distintos colores, posiciones y duración */
-.wave-1 {
-  top: 20px;
-  background-color: #ff4081;
-  animation-duration: 12s;
-}
-
-.wave-2 {
-  top: 60px;
-  background-color: #ff80ab;
-  animation-duration: 14s;
-}
-
-.wave-3 {
-  top: 100px;
-  background-color: #ff1744;
-  animation-duration: 16s;
-}
-
+.wave-1 { top: 20px; background: #ff4081; animation-duration: 12s; }
+.wave-2 { top: 60px; background: #ff80ab; animation-duration: 14s; }
+.wave-3 { top: 100px; background: #ff1744; animation-duration: 16s; }
 @keyframes brush {
   0%   { transform: translateX(0) rotate(0deg) scaleY(1); }
   25%  { transform: translateX(-15%) rotate(1deg) scaleY(1.1); }
@@ -124,24 +92,25 @@ section h2 {
 }
 
 /* Carrusel fallback */
-.fallback-carousel {
+#fallback-carousel {
   display: none;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -2;
+  z-index: 0;
+  overflow: hidden;
 }
-
-.fallback-carousel img {
+#fallback-carousel img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  transition: opacity 0.8s ease-in-out;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 /* Contenido central */
@@ -153,7 +122,6 @@ section h2 {
   text-align: center;
   padding: 20px;
 }
-
 .logo { width: 320px; margin-bottom: 20px; background: transparent; }
 
 /* =======================
@@ -170,20 +138,18 @@ section h2 {
   border-radius: 30px;
   transition: background 0.3s;
 }
-
 .btn:hover, .btn-whatsapp:hover { background: #b6932f; }
 
 /* =======================
-   Secciones
+   Slogan
    ======================= */
 .slogan {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-weight: 500;
   color: #333;
   margin: 40px 20px;
 }
-
 .slogan .highlight-text {
   color: #112646;
   font-weight: 700;
@@ -191,28 +157,18 @@ section h2 {
   white-space: nowrap;
 }
 
-@media (max-width: 600px) {
-  .slogan { font-size: 1.4rem; margin: 30px 10px; }
-}
+/* =======================
+   Secciones
+   ======================= */
+section { padding: 60px 20px; background: #fff; margin-bottom: 0; }
 
-section {
-  padding: 60px 20px;
-  background: #fff;
-  margin-bottom: 0; /* elimina separación entre secciones */
-}
-
-/* GRID GENERAL */
-.grid, .kits-grid {
-  display: grid;
-  gap: 20px;
-  padding: 20px;
-}
-
+/* GRID */
+.grid, .kits-grid { display: grid; gap: 20px; padding: 20px; }
 .grid { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
 
-/* TARJETAS */
+/* Tarjetas */
 .card {
   background: #fff;
   border-radius: 12px;
@@ -231,7 +187,7 @@ footer {
   background: #112646;
   color: #fff;
   text-align: center;
-  padding: 20px 20px;
+  padding: 20px;
   border-top: 3px solid #d4af37;
   display: flex;
   flex-direction: column;
@@ -239,29 +195,17 @@ footer {
   gap: 10px;
 }
 footer p, footer h2 { margin: 5px 0; }
-
-.foot{
-  color: #929191;
-}
-
-/* =======================
-   Íconos sociales en el footer
-   ======================= */
+.foot { color: #929191; }
 footer .social-icon {
-  width: 35px;    /* tamaño más pequeño */
-  height: 35px;   /* mantiene proporción */
-  margin: 0 8px;  /* espacio entre íconos */
-  transition: transform 0.3s; /* efecto hover suave */
+  width: 35px;
+  height: 35px;
+  margin: 0 8px;
+  transition: transform 0.3s;
 }
-
-footer .social-icon:hover {
-  transform: scale(1.1); /* efecto al pasar el cursor */
-}
-
-
+footer .social-icon:hover { transform: scale(1.1); }
 
 /* =======================
-   Botón flotante WhatsApp
+   Botón WhatsApp flotante
    ======================= */
 .btn-whatsapp-flotante {
   position: fixed;
@@ -305,7 +249,7 @@ footer .social-icon:hover {
 body { padding-top: 60px; }
 
 /* =======================
-   Alerta Sitio en Construcción
+   Banner Construcción
    ======================= */
 .construction-banner {
   position: fixed;
@@ -326,7 +270,7 @@ body { padding-top: 60px; }
 .construction-banner.show { opacity: 1; transform: translateY(0); }
 
 /* =======================
-   Capacitaciones
+   Capacitaciones (carrusel)
    ======================= */
 .capacitaciones h2 {
   font-size: 2.4rem;
@@ -349,20 +293,20 @@ body { padding-top: 60px; }
 }
 .capacitaciones h3 { background: #112646; color: #fff; font-size: 1.1rem; padding: 8px; }
 
-/* Carrusel */
 .carousel-container { position: relative; max-width: 100%; margin: 0 auto; overflow: hidden; }
 .carousel { display: flex; transition: transform 0.5s ease; }
 .carousel-item { flex: 0 0 33.333%; box-sizing: border-box; padding: 8px; cursor: pointer; transition: transform 0.3s ease; }
 .carousel-item img { width: 100%; max-height: 700px; border-radius: 10px; transition: transform 0.3s ease; }
 .carousel-item:hover img { transform: scale(1.05); }
-.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(17, 38, 70, 0.8); color: #fff; border: none; font-size: 2rem; padding: 8px 12px; cursor: pointer; border-radius: 50%; z-index: 5; }
-.carousel-btn:hover { background: rgba(17, 38, 70, 1); }
-.carousel-btn.prev { left: 15px; } .carousel-btn.next { right: 15px; }
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(17,38,70,0.8); color: #fff; border: none; font-size: 2rem; padding: 8px 12px; cursor: pointer; border-radius: 50%; z-index: 5; }
+.carousel-btn:hover { background: rgba(17,38,70,1); }
+.carousel-btn.prev { left: 15px; }
+.carousel-btn.next { right: 15px; }
 @media (max-width: 768px) { .carousel-item { flex: 0 0 50%; } }
 @media (max-width: 480px) { .carousel-item { flex: 0 0 100%; } }
 
 /* =======================
-   Showcase rotativo tipo Mixcoco
+   Showcase
    ======================= */
 .showcase-section {
   position: relative;
@@ -373,9 +317,8 @@ body { padding-top: 60px; }
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: #000; /* si quieres un fondo base negro */
+  background: #000;
 }
-
 .showcase-slides img {
   position: absolute;
   top: 0;
@@ -386,11 +329,9 @@ body { padding-top: 60px; }
   opacity: 0;
   animation: fadeSlides 12s infinite;
 }
-
 .showcase-slides img:nth-child(1) { animation-delay: 0s; }
 .showcase-slides img:nth-child(2) { animation-delay: 4s; }
 .showcase-slides img:nth-child(3) { animation-delay: 8s; }
-
 @keyframes fadeSlides {
   0% { opacity: 0; }
   8% { opacity: 1; }
@@ -398,8 +339,6 @@ body { padding-top: 60px; }
   41% { opacity: 0; }
   100% { opacity: 0; }
 }
-
-/* Contenido de frente */
 .showcase-content {
   position: relative;
   z-index: 2;
@@ -410,34 +349,19 @@ body { padding-top: 60px; }
   flex-direction: column;
   align-items: center;
 }
-
-.logos-wrapper {
-  display: flex;
-  gap: 40px; /* separación entre logos */
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
+.logos-wrapper { display: flex; gap: 40px; justify-content: center; margin-bottom: 20px; }
 .showcase-logo { width: 180px; height: auto; }
-
 .showcase-content p {
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 2vw, 1.4rem);
   font-weight: 500;
   line-height: 1.5;
-  color: #ffffff;
+  color: #fff;
   text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
   max-width: 800px;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .logos-wrapper { gap: 20px; flex-wrap: wrap; }
-  .showcase-logo { width: 140px; }
-  .showcase-content p { font-size: 1.2rem; }
 }
 
 /* =======================
-   Kits Profesionales
+   Kits
    ======================= */
 #kits h2 { font-size: 2.4rem; margin-bottom: 40px; color: #112646; font-weight: 700; }
 .kits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
@@ -451,184 +375,122 @@ body { padding-top: 60px; }
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .kit-card img { width: 100%; height: 600px; object-fit: cover; border-radius: 6px; margin-bottom: 10px; }
-.kit-card h3 { background: #112646; color: #fff; font-size: 1.1rem; padding: 8px; margin: 10px 0 0 0; border-radius: 0; }
+.kit-card h3 { background: #112646; color: #fff; font-size: 1.1rem; padding: 8px; margin: 10px 0 0 0; }
 .kit-card p { font-size: 0.95rem; color: #333; margin: 5px 0 0 0; }
 .kit-card:hover { transform: scale(1.05); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 @media (max-width: 768px) { .kits-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 480px) { .kits-grid { grid-template-columns: 1fr; } }
 
-
 /* =======================
-   Sección Certificaciones
+   Certificaciones
    ======================= */
 .certificaciones {
   position: relative;
   width: 100%;
-  height: 400px; /* Ajusta altura */
+  height: 400px;
   overflow: hidden;
-  background-color: #fff; /* Fondo blanco */
+  background: #fff;
 }
-
 .certificaciones h2 {
   position: relative;
   z-index: 2;
   font-size: 2.4rem;
   margin-bottom: 20px;
-  color: #fff; /* Título blanco */
+  color: #fff;
   font-weight: 700;
   text-align: center;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
-
 .certificaciones-slides {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* detrás del contenido */
+  z-index: 1;
 }
-
 .certificaciones-slides img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ocupa todo el contenedor */
+  object-fit: cover;
   opacity: 0;
-  transform: scale(1.2); /* empieza ligeramente más grande */
+  transform: scale(1.2);
   animation: zoomFade 16s infinite;
 }
-
-/* Distribución de delays según imagen */
 .certificaciones-slides img:nth-child(1) { animation-delay: 0s; }
 .certificaciones-slides img:nth-child(2) { animation-delay: 4s; }
 .certificaciones-slides img:nth-child(3) { animation-delay: 8s; }
 .certificaciones-slides img:nth-child(4) { animation-delay: 12s; }
-
-/* Keyframes para animación zoom + fade */
 @keyframes zoomFade {
-  0% {
-    opacity: 0;
-    transform: scale(1.2);
-  }
-  6.25% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  25% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  31.25% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
+  0% { opacity: 0; transform: scale(1.2); }
+  6.25% { opacity: 1; transform: scale(1); }
+  25% { opacity: 1; transform: scale(1); }
+  31.25% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 0; transform: scale(0.8); }
 }
-
-/* Contenido de frente */
 .certificaciones-content {
   position: relative;
-  z-index: 2; /* encima de las imágenes */
+  z-index: 2;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   font-size: 1.2rem;
-  color: #fff; /* descripción en blanco */
+  color: #fff;
   text-align: center;
   text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
 }
 
-@media (max-width: 1024px) {
-  .certificaciones {
-    height: 350px;
-  }
-  .certificaciones-content {
-    font-size: 1rem;
-    padding: 15px;
-  }
-}
-
-@media (max-width: 600px) {
-  .certificaciones {
-    height: 300px;
-  }
-  .certificaciones-content {
-    font-size: 0.9rem;
-    padding: 10px;
-  }
-}
-
-
-/* Color blanco para todo el texto, incluidos los <strong> */
-.certificaciones-content p,
-.certificaciones-content p strong {
-  color: #fff !important;
-}
-
-@media (max-width: 768px) {
-  .certificaciones {
-    height: 300px;
-    padding: 20px;
-  }
-  .certificaciones h2 { font-size: 1.8rem; }
-  .certificaciones-content p { font-size: 1rem; }
-}
-
-/*img 3D*/
-
+/* =======================
+   Imagen fija (3D)
+   ======================= */
 .fixed-bg-section {
   position: relative;
   width: 100%;
-  min-height: 500px; /* altura de la sección */
-  background-image: url('img/gota.jpeg'); /* tu imagen de fondo */
+  min-height: 500px;
+  background-image: url('img/gota.jpeg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* clave: fondo fijo */
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: #fff;
 }
-
 .fixed-bg-content {
   position: relative;
   z-index: 2;
   max-width: 800px;
   padding: 20px;
-  background: rgba(0,0,0,0.3); /* opcional: para que el texto resalte */
+  background: rgba(0,0,0,0.3);
   border-radius: 12px;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
 }
+.fixed-bg-content h2 { font-size: 2.5rem; margin-bottom: 20px; }
+.fixed-bg-content p { font-size: 1.3rem; line-height: 1.5; }
 
-.fixed-bg-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.fixed-bg-content p {
-  font-size: 1.3rem;
-  line-height: 1.5;
-}
-
-/* Responsive */
+/* ======= Breakpoints ======= */
 @media (max-width: 768px) {
   .fixed-bg-section { min-height: 400px; }
   .fixed-bg-content h2 { font-size: 2rem; }
   .fixed-bg-content p { font-size: 1.1rem; }
 }
-
 @media (max-width: 480px) {
   .fixed-bg-section { min-height: 300px; }
   .fixed-bg-content h2 { font-size: 1.6rem; }
   .fixed-bg-content p { font-size: 1rem; }
 }
 
-
-
+/* === Extra para pantallas muy pequeñas (≤ 360px) === */
+@media (max-width: 360px) {
+  body { font-size: 0.85rem; }
+  .hero-content { padding: 8px; }
+  .logo { width: 80%; }
+  h1 { font-size: 1.4rem; }
+  h2 { font-size: 1.2rem; }
+  p { font-size: 0.9rem; }
+  .btn { padding: 8px 16px; font-size: 0.85rem; }
+}
