@@ -10,117 +10,217 @@
 <body>
 
   <!-- Banner de sitio en construcción -->
-<div id="construction-banner" class="construction-banner">⚠️ Academia LeidyArt informa que el sitio se encuentra en construcción.</div>
+  <div id="construction-banner" class="construction-banner">
+    ⚠️ Academia LeidyArt informa que el sitio se encuentra en construcción.
+  </div>
 
   <!-- Banner promocional -->
-  <div class="promo-banner" id="promo-banner" style="display:none;"></div>
+  <div class="promo-banner" id="promo-banner"></div>
 
   <!-- Hero con video de fondo y fallback -->
   <header class="hero">
-    <video autoplay muted loop playsinline poster="img/imgCarru3.jpeg" class="bg-video" id="hero-video">
-      <source src="video/video.mp4" type="video/mp4">
-    </video>
+  <!-- Pinceladas animadas -->
+  <div class="wave wave-1"></div>
+  <div class="wave wave-2"></div>
+  <div class="wave wave-3"></div>
 
-    <div class="fallback-carousel" id="fallback-carousel">
-      <img src="img/imgCarru1.jpeg" alt="Capacitación 1">
-      <img src="img/imgCarru2.jpeg" alt="Capacitación 2">
-      <img src="img/imgCarru4.jpeg" alt="Capacitación 3">
-      <img src="img/imgCarru5.jpeg" alt="Capacitación 3">
-      <img src="img/imgCarru6.jpeg" alt="Capacitación 3">
-      <img src="img/imgCarru7.jpeg" alt="Capacitación 3">
-      <img src="img/imgCarru8.jpeg" alt="Capacitación 3">
-    </div>
+  <!-- Video de fondo -->
+  <video autoplay muted loop playsinline poster="img/imgCarru3.jpeg" class="bg-video" id="hero-video">
+    <source src="video/video.mp4" type="video/mp4">
+  </video>
 
-    <div class="overlay"></div>
+  <!-- Carrusel fallback -->
+  <div class="fallback-carousel" id="fallback-carousel">
+    <img src="img/imgCarru1.jpeg" alt="Capacitación 1">
+    <img src="img/imgCarru2.jpeg" alt="Capacitación 2">
+    <img src="img/imgCarru4.jpeg" alt="Capacitación 3">
+    <img src="img/imgCarru5.jpeg" alt="Capacitación 4">
+    <img src="img/imgCarru6.jpeg" alt="Capacitación 5">
+    <img src="img/imgCarru7.jpeg" alt="Capacitación 6">
+    <img src="img/imgCarru8.jpeg" alt="Capacitación 7">
+  </div>
 
-    <div class="hero-content">
-      <img src="img/logo.jpeg" alt="Logo del salón" class="logo">
-      <h1>Capacitaciones Profesionales en Manicura</h1>
-      <p>Certificaciones y kits exclusivos para potenciar tu carrera</p>
-      <a href="#cursos" class="btn">Ver Capacitaciones</a>
-    </div>
-  </header>
+  <!-- Sombra sobre el fondo -->
+  <div class="overlay"></div>
+
+ <!-- Contenido principal -->
+<div class="hero-content">
+  <div class="logos-container">
+    <img src="img/logoPro.png" alt="Logo del salón" class="logo main-logo">
+    <img src="img/logoMix.png" alt="Logo secundario" class="logo secondary-logo">
+  </div>
+  <h1>Capacitaciones Profesionales en Manicura</h1>
+  <p>Certificaciones y kits exclusivos para potenciar tu carrera</p>
+  <a href="#cursos" class="btn">Ver Capacitaciones</a>
+</div>
+
+</header>
+
+
+  <!-- Slogan animado -->
+  <section class="slogan">
+    <p>
+      Es hora de
+      <span class="highlight-text" id="animated-text">FORMARTE COMO PROFESIONAL</span>
+      en uñas
+    </p>
+  </section>
 
   <!-- Capacitaciones -->
-  <section id="cursos">
-    <h2>Capacitaciones</h2>
-    <div class="grid">
-      <!-- 8 cursos -->
-      <div class="card"><img src="img/imgCarru5.jpeg" alt="Curso Básico"><h3>Manicura Básica</h3><p>Duración: 2 semanas<br>Certificación incluida</p></div>
-      <div class="card"><img src="img/imgCarru3.jpeg" alt="Curso Avanzado"><h3>Uñas Acrílicas Avanzado</h3><p>Duración: 4 semanas<br>Certificación incluida</p></div>
-      <div class="card"><img src="img/imgCarru8.jpeg" alt="Curso Decoración"><h3>Decoración Profesional</h3><p>Duración: 3 semanas<br>Certificación incluida</p></div>
-      <div class="card"><img src="img/imgCarru4.jpeg" alt="Curso Avanzado"><h3>Nail Art Creativo</h3><p>Duración: 2 semanas<br>Certificación incluida</p></div>
-      <div class="card"><img src="img/imgCarru6.jpeg" alt="Curso Básico"><h3>Manicura Exprés</h3><p>Duración: 1 semana<br>Certificación incluida</p></div>
-      <div class="card"><img src="img/curso2.jpeg" alt="Curso Avanzado"><h3>Esmaltado Permanente</h3><p>Duración: 3 semanas<br>Certificación incluida</p></div>
-      <div class="card"><img src="img/curso1.jpeg" alt="Curso Básico"><h3>Diseños en Gel</h3><p>Duración: 2 semanas<br>Certificación incluida</p></div>
-      <div class="card"><img src="img/imgCarru7.jpeg" alt="Curso Avanzado"><h3>Uñas Esculturales</h3><p>Duración: 4 semanas<br>Certificación incluida</p></div>
+  <section id="cursos" class="capacitaciones">
+    <h2>Nuestras Capacitaciones</h2>
+
+    <div class="carousel-container">
+      <button class="carousel-btn prev">&#10094;</button>
+
+      <div class="carousel">
+        <!-- Ejemplo de item, se puede duplicar -->
+        <div class="carousel-item" data-curso="Uñas Acrílicas">
+          <img src="img/acri.png" alt="Curso de Manicura Básica">
+          <h3>Manicura Básica</h3>
+        </div>
+        <div class="carousel-item" data-curso="Nail Dual">
+          <img src="img/dual kit.png" alt="Curso Dual">
+          <h3>Nail Art</h3>
+        </div>
+        <div class="carousel-item" data-curso="Uñas Acrílicas Avanzadas">
+          <img src="img/pedi.png" alt="Curso Avanzado">
+          <h3>Uñas Acrílicas</h3>
+        </div>
+        <div class="carousel-item" data-curso="PolyGel">
+          <img src="img/polyGel.png" alt="PolyGel">
+          <h3>PolyGel</h3>
+        </div>
+        <div class="carousel-item" data-curso="SemiPermanente">
+          <img src="img/semi.png" alt="SemiPermanente">
+          <h3>SemiPermanente</h3>
+        </div>
+      </div>
+
+      <button class="carousel-btn next">&#10095;</button>
     </div>
   </section>
 
-  <!-- Kits -->
+  <!--logo mixcoco-->
+  <section id="showcase" class="showcase-section">
+  <div class="showcase-slides">
+    <img src="img/imgCarru1.jpeg" alt="Slide 1">
+    <img src="img/imgCarru2.jpeg" alt="Slide 2">
+    <img src="img/imgCarru3.jpeg" alt="Slide 3">
+  </div>
+
+  <div class="showcase-content">
+    <div class="logos-wrapper">
+      <img src="img/logoPro.png" alt="Logo Principal" class="showcase-logo">
+      <img src="img/logoMix.png" alt="Logo Secundario" class="showcase-logo">
+    </div>
+    <p>Potencia tu carrera con nuestros cursos y kits exclusivos. Aprende con los mejores profesionales.</p>
+  </div>
+</section>
+
+
+
+  <!-- Kits Profesionales -->
   <section id="kits">
     <h2>Kits Profesionales</h2>
-    <div class="grid">
-      <!-- 8 kits -->
-      <div class="card"><img src="img/kit.jpeg" alt="Kit Básico"><h3>Kit Básico</h3><p>Incluye lo esencial para iniciar en manicura.</p></div>
-      <div class="card"><img src="img/kit.jpeg" alt="Kit Profesional"><h3>Kit Profesional</h3><p>Herramientas de alta calidad para resultados duraderos.</p></div>
-      <div class="card"><img src="img/kit.jpeg" alt="Kit Avanzado"><h3>Kit Avanzado</h3><p>Incluye herramientas extra para mayor precisión.</p></div>
-      <div class="card"><img src="img/kit.jpeg" alt="Kit Nail Art"><h3>Kit Nail Art</h3><p>Pinceles y pigmentos para decoraciones.</p></div>
-      <div class="card"><img src="img/kit.jpeg" alt="Kit Gel"><h3>Kit Gel</h3><p>Incluye lámpara UV y geles de alta calidad.</p></div>
-      <div class="card"><img src="img/kit.jpeg" alt="Kit Acrílico"><h3>Kit Acrílico</h3><p>Monómero, polvos y pinceles profesionales.</p></div>
-      <div class="card"><img src="img/kit.jpeg" alt="Kit Completo"><h3>Kit Completo</h3><p>Ideal para profesionales con todo en un solo pack.</p></div>
-      <div class="card"><img src="img/kit.jpeg" alt="Kit Premium"><h3>Kit Premium</h3><p>Las mejores herramientas de calidad internacional.</p></div>
+    <div class="kits-grid">
+      <div class="kit-card" data-kit="Kit Acrílico">
+        <img src="img/acri Kit.png" alt="Kit Básico">
+        <h3>Kit Acrílico</h3>
+      </div>
+      <div class="kit-card" data-kit="Kit Profesional">
+        <img src="img/dual.png" alt="Kit Profesional">
+        <h3>Kit Profesional</h3>
+      </div>
+      <div class="kit-card" data-kit="Kit Avanzado">
+        <img src="img/pedi kit.png" alt="Kit Avanzado">
+        <h3>Kit Avanzado</h3>
+      </div>
+      <div class="kit-card" data-kit="SemiPermanente">
+        <img src="img/semKit.png" alt="Kit SemiPermanente">
+        <h3>SemiPermanente</h3>
+      </div>
+      <div class="kit-card" data-kit="Poly Gel">
+        <img src="img/poliGelKit.png" alt="Kit Poly Gel">
+        <h3>Poly Gel</h3>
+      </div>
+      <div class="kit-card" data-kit="PressON">
+        <img src="img/pressonKit.png" alt="Kit PressON">
+        <h3>PressON</h3>
+      </div>
     </div>
   </section>
 
   <!-- Certificaciones -->
-  <section id="certificaciones">
-    <h2>Certificaciones</h2>
-    <div class="grid">
-      <!-- 8 certificaciones -->
-      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 1"><h3>Certificado en Manicura</h3></div>
-      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 2"><h3>Certificado en Acrílico</h3></div>
-      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 3"><h3>Certificado en Gel</h3></div>
-      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 4"><h3>Certificado en Decoración</h3></div>
-      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 5"><h3>Certificado en Nail Art</h3></div>
-      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 6"><h3>Certificado Avanzado</h3></div>
-      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 7"><h3>Certificado Profesional</h3></div>
-      <div class="card"><img src="img/certificacion.jpeg" alt="Certificado 8"><h3>Certificado Master</h3></div>
+<section id="certificaciones" class="certificaciones">
+  <!-- Título separado, igual que en Kits -->
+  <h2 class="certificaciones-title">Certificaciones</h2>
+
+  <div class="certificaciones-slides">
+    <img src="img/certificacion.jpeg" alt="Certificación 1">
+    <img src="img/imgCarru7.jpeg" alt="Certificación 2">
+    <img src="img/imgCarru5.jpeg" alt="Certificación 3">
+    <img src="img/imgCarru8.jpeg" alt="Certificación 4">
+  </div>
+
+  <div class="certificaciones-content">
+    <p>
+      La academia <strong>LeidyArt</strong> entrega certificaciones avaladas por la
+      <strong>Secretaría de Educación</strong> y por la marca internacional
+      <strong>Mixcoco</strong>.
+    </p>
+  </div>
+</section>
+
+
+<!-- Sección con fondo fijo -->
+<section class="fixed-bg-section">
+  <div class="fixed-bg-content">
+    <h2>Explora la Otra Dimensión en nuestra Academia</h2>
+    <p>
+      La academia <strong>LeidyArt</strong> te comparte su Ubicación .
+    </p>
+
+    <!-- Mapa embebido -->
+    <div class="map-wrapper">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31861.216005642407!2d-76.542009145092!3d3.4345843285501356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a76ce9e9ccdb%3A0xe84c7061b77f0f6b!2sHotel%20Qatar%20Cali!5e0!3m2!1sen!2sus!4v1758471889955!5m2!1sen!2sus" 
+      width="600" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
     </div>
-    <p>Todos nuestros cursos incluyen certificado avalado por Secretaría de Educación</p>
-  </section>
 
-  <!-- WhatsApp solo icono -->
-<a href="https://wa.me/573155704875" target="_blank" class="btn-whatsapp-flotante">
-  <img src="img/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon">
-</a>
+  </div>
+</section>
 
+
+
+
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/573155704875" target="_blank" class="btn-whatsapp-flotante">
+    <img src="img/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon">
+  </a>
 
   <!-- Footer -->
   <footer>
-  <h2>Contáctanos</h2>
-  <p>
-    📞 <a href="https://wa.me/573155704875" target="_blank" style="color: inherit; text-decoration: none;">+57 315 5704875</a><br>
-    📧 <a href="mailto:info@leidyArt" style="color: inherit; text-decoration: none;">info@leidyArt</a><br>
-    📍 Cali, Colombia
-  </p>
-  <p>🌐 Síguenos en: 
-  <a href="https://www.instagram.com/leidyart1?igsh=MXE0ejg1b25hNmY1ZA==" target="_blank">
-    <img src="img/instagram.png" alt="Instagram" class="social-icon">
-  </a>
-  <a href="https://www.facebook.com/share/1L3LX56ghB/" target="_blank">
-    <img src="img/facebook.png" alt="Facebook" class="social-icon">
-  </a>
-  <a href="https://www.tiktok.com/@ledirora24?_t=ZS-8zJAY6C0STU&_r=1" target="_blank">
-    <img src="img/tiktok.png" alt="Facebook" class="social-icon">
-  </a>
-</p>
+    <h2>Contáctanos</h2>
+    <p class="foot">
+      📞 <a href="https://wa.me/573155704875" target="_blank" style="color: inherit; text-decoration: none;">+57 315 5704875</a><br>
+      📧 <a href="mailto:info@leidyArt" style="color: inherit; text-decoration: none;">info@leidyArt</a><br>
+      📍 Cali, Colombia
+    </p>
+    <p class="foot">🌐 Síguenos en: 
+      <a href="https://www.instagram.com/leidyart1" target="_blank"><img src="img/instagram.png" alt="Instagram" class="social-icon"></a>
+      <a href="https://www.facebook.com/share/1L3LX56ghB/" target="_blank"><img src="img/facebook.png" alt="Facebook" class="social-icon"></a>
+      <a href="https://www.tiktok.com/@ledirora24" target="_blank"><img src="img/tiktok.png" alt="TikTok" class="social-icon"></a>
+    </p>
+    <p class="foot">&copy; 2025 Diseñado y Desarrollado por Andres Florez.</p>
+  </footer>
 
-  <p>&copy; 2025 Salón de Uñas LeidyArt. Todos los derechos reservados.</p>
-</footer>
-
-
-  <!-- JS externo -->
   <script src="scripts.js"></script>
 </body>
 </html>
