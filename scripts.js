@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (deleting && i === 0) {
         deleting = false;
       }
-    }, 140);
+    }, 90);
   }
 
   // ======================
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     allItems.forEach(item => {
       item.addEventListener("click", () => {
         const curso = encodeURIComponent(item.dataset.curso);
-        const url = `https://wa.me/573155704875?text=Hola,%20quiero%20información%20sobre%20el%20curso%20de%20${curso}`;
+        const url = `https://wa.me/573153161525?text=Hola,%20quiero%20información%20sobre%20el%20curso%20de%20${curso}`;
         window.open(url, "_blank");
       });
     });
@@ -177,8 +177,68 @@ document.addEventListener('DOMContentLoaded', () => {
   kits.forEach(kit => {
     kit.addEventListener("click", () => {
       const nombre = encodeURIComponent(kit.dataset.kit || kit.querySelector("h3").innerText);
-      const url = `https://wa.me/573155704875?text=Hola,%20quiero%20información%20sobre%20el%20${nombre}`;
+      const url = `https://wa.me/573153161525?text=Hola,%20quiero%20información%20sobre%20el%20${nombre}`;
       window.open(url, "_blank");
     });
   });
+});
+// =======================
+// MODAL CERTIFICACIONES
+// =======================
+const modalCert = document.getElementById("imgModal");
+const modalCertImg = document.getElementById("modalImg");
+const closeCertBtn = modalCert.querySelector(".modal-close");
+
+document.querySelectorAll(".cert-img img").forEach(img => {
+  img.addEventListener("click", () => {
+    modalCert.classList.add("active");
+    modalCertImg.src = img.getAttribute("src");
+  });
+});
+
+closeCertBtn.onclick = () => modalCert.classList.remove("active");
+modalCert.onclick = e => {
+  if (e.target === modalCert) modalCert.classList.remove("active");
+};
+
+// =======================
+// CARRUSEL MODULOS
+// =======================
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".modulo-slide");
+  let currentSlide = 0;
+  const intervalTime = 5000;
+  let slideInterval = setInterval(nextSlide, intervalTime);
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      if (i === index) slide.classList.add("active");
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  document.getElementById("nextModulo").addEventListener("click", () => { 
+    nextSlide(); 
+    resetInterval(); 
+  });
+
+  document.getElementById("prevModulo").addEventListener("click", () => { 
+    prevSlide(); 
+    resetInterval(); 
+  });
+
+  function resetInterval() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, intervalTime);
+  }
 });
