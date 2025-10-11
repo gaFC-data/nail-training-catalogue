@@ -28,6 +28,12 @@
   <video autoplay muted loop playsinline poster="img/formacionPro.jpeg" class="bg-video" id="hero-video">
     <source src="video/video.mp4" type="video/mp4">
   </video>
+  <!-- Controles de video -->
+<div class="video-controls">
+  <button id="playPauseBtn">⏯</button>
+  <button id="muteBtn">🔇</button>
+</div>
+
 
   <!-- Carrusel fallback -->
   <div class="fallback-carousel" id="fallback-carousel" style="display:none;">
@@ -78,6 +84,14 @@
 
       <div class="carousel">
         <!-- Ejemplo de item, se puede duplicar -->
+        <div class="carousel-item" data-curso="Pedicura">
+          <h3>Pedicura</h3>
+          <img src="img/pedicura/PEDICURA-LEIDY.jpg" alt="Curso Pedicura">
+        </div>
+        <div class="carousel-item" data-curso="Manicura">
+          <h3>Manicura</h3>
+          <img src="img/manicura/MANICURA-LEIDY.jpg" alt="Curso de Manicura">
+        </div>
         <div class="carousel-item" data-curso="Uñas Acrílicas Inicial">
           <h3>Acrílico Inicial</h3>
           <img src="img/acrilico/ACRILICO INICIANTE.jpg" alt="Curso de Uñas Acrílicas Inicial">
@@ -105,6 +119,14 @@
         <div class="carousel-item" data-curso="Semi-Permanente">
           <h3>SemiPermanente</h3>
           <img src="img/semi/SEMI AVANZADO .jpg" alt="SemiPermanente">
+        </div>
+        <div class="carousel-item" data-curso="SoftGel">
+          <h3>PresON</h3>
+          <img src="img/softGel/PRESSON-MIXCOCO-LEIDY (1).jpg" alt="PresON">
+        </div>
+        <div class="carousel-item" data-curso="Dual System">
+          <h3>Dual System</h3>
+          <img src="img/dual/DUAL-MIXCOCO-LEIDY.jpg" alt="Curso de Uñas Dual System">
         </div>
       </div>
 
@@ -135,6 +157,14 @@
   <section id="kits">
     <h2>Kits Profesionales</h2>
     <div class="kits-grid">
+      <div class="kit-card" data-kit="Pedicura">
+        <h3>Pedicura</h3>
+        <img src="img/pedicura/PEDICURA-kit.jpg" alt="Kit Pedicura">
+      </div>
+      <div class="kit-card" data-kit="Manicura">
+        <h3>Manicura</h3>
+        <img src="img/manicura/MANICURA-kit.jpg" alt="Kit Manicura">
+      </div>
       <div class="kit-card" data-kit="Kit Acrílico">
         <h3>Kit Acrílico</h3>
         <img src="img/acril-kit/kit.jpg" alt="Kit Básico">
@@ -150,6 +180,10 @@
       <div class="kit-card" data-kit="PressON">
         <h3>PressON</h3>
         <img src="img/softGel-kit/PRESSON-MIXCOCO-kit.jpg" alt="Kit PressON">
+      </div>
+      <div class="kit-card" data-kit="DualSystem">
+        <h3>Dual System</h3>
+        <img src="img/dual/DUAL-kit.jpg" alt="Kit DualSystem">
       </div>
     </div>
   </section>
@@ -260,16 +294,36 @@
     <button id="prevModulo">⟨</button>
     <button id="nextModulo">⟩</button>
   </div>
+</section>
+<!-- =======================
+     CAPACITACIONES VIRTUALES
+======================= -->
+<section id="virtuales" class="virtuales-section">
+  <div class="virtuales-content">
+    <h2>Capacitaciones Virtuales</h2>
+    <p>
+      Para aquellos clientes que no pueden asistir de manera presencial, ofrecemos 
+      capacitaciones virtuales con la misma calidad y profesionalismo. Aprende desde 
+      cualquier lugar con nuestros cursos en línea.
+    </p>
+  </div>
 
-  <!-- Modal módulos -->
-  <div id="modalModulo" class="modal-overlay">
-    <div class="modal">
-      <button class="modal-close">&times;</button>
-      <img class="modal-content" id="modalModuloImg">
-      <div class="modal-caption" id="modalModuloCaption"></div>
+  <div class="virtuales-gallery">
+    <div class="virtual-card" data-curso="Curso Virtual 1">
+      <img src="img/formacionPro.jpeg" alt="Curso Virtual 1">
+      <h3>Curso Virtual 1</h3>
+    </div>
+    <div class="virtual-card" data-curso="Curso Virtual 2">
+      <img src="img/imgCarru8.jpeg" alt="Curso Virtual 2">
+      <h3>Curso Virtual 2</h3>
+    </div>
+    <div class="virtual-card" data-curso="Curso Virtual 3">
+      <img src="img/imgCarru6.jpeg" alt="Curso Virtual 3">
+      <h3>Curso Virtual 3</h3>
     </div>
   </div>
 </section>
+
 
 
 

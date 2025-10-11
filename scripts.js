@@ -213,7 +213,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function showSlide(index) {
     slides.forEach((slide, i) => {
       slide.classList.remove("active");
-      if (i === index) slide.classList.add("active");
+      slide.style.pointerEvents = "none"; // Desactiva clics en los no visibles
+      if (i === index) {
+        slide.classList.add("active");
+        slide.style.pointerEvents = "auto"; // Solo el visible será clickeable
+      }
     });
   }
 
@@ -241,4 +245,64 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(slideInterval);
     slideInterval = setInterval(nextSlide, intervalTime);
   }
+
+  // =======================
+  // REDIRECCIÓN A WHATSAPP
+  // =======================
+  const whatsappNumber = "573153161525"; 
+
+  slides.forEach((slide) => {
+    slide.addEventListener("click", () => {
+      if (!slide.classList.contains("active")) return; // Evita clics en ocultos
+      const moduloName = slide.querySelector("h3").innerText;
+      const message = `Hola, estoy interesado(a) en obtener información sobre ${moduloName} del programa LeidyArt.`;
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+      window.open(whatsappLink, "_blank");
+    });
+  });
 });
+
+// =======================
+// REDIRECCIÓN CAPACITACIONES VIRTUALES
+// =======================
+const virtualCards = document.querySelectorAll(".virtual-card");
+const whatsappNumber = "573153161525"; // Reemplaza con tu número
+
+virtualCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    const cursoName = card.dataset.curso;
+    const message = `Hola, estoy interesado(a) en obtener información sobre ${cursoName} de LeidyArt (Capacitaciones Virtuales).`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    window.open(whatsappLink, "_blank");
+  });
+});
+
+// Controles de video
+const video = document.getElementById('hero-video');
+const playPauseBtn = document.getElementById("playPauseBtn");
+const muteBtn = document.getElementById("muteBtn");
+
+// Inicia en silencio para que autoplay funcione
+video.muted = true;
+
+// Botón reproducir / pausar
+playPauseBtn.addEventListener("click", () => {
+  if (video.paused) {
+    video.play();
+    playPauseBtn.textContent = "⏸"; // cambia ícono a pausar
+  } else {
+    video.pause();
+    playPauseBtn.textContent = "▶️"; // cambia ícono a reproducir
+  }
+});
+
+// Botón silenciar / activar sonido
+muteBtn.addEventListener("click", () => {
+  video.muted = !video.muted;
+  muteBtn.textContent = video.muted ? "🔇" : "🔊";
+});
+
+
+
