@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const month = now.getMonth();
     const day = now.getDate();
 
-    if ((month === 7 && day >= 30) || month === 8 || (month === 9 && day <= 31)) {
-      banner.innerHTML = "🎃 ¡Promo Halloween! Cursos con 20% OFF 👻";
+    if ((month === 11 && day >= 30) || month === 11 || (month === 11 && day <= 25)) {
+      banner.innerHTML = "🎁 ¡Promo Noviembre! Cursos con 20% OFF 🎁";
       banner.style.display = "block";
     } else if (month === 11 && day <= 25) {
       banner.innerHTML = "🎄 ¡Promo Navidad! Inscríbete y recibe un kit gratis 🎁";
